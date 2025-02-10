@@ -1,0 +1,42 @@
+Especificação
+- Chamar 1 ou mais funções em Assembly NASM IA-32.
+- Interpretar a linha de comando.
+- Passar parâmetros pela pilha para uma função em Assembly que deve fazer os cálculos requeridos.
+- Outra função em Assembly que também recebe qualquer parâmetro pela pilha e que deve imprimir todas as mensagens na tela.
+- Strings podem ser variáveis locais ou variáveis globais.
+- Nenhum parâmetro lido pelo programa da linha de comando pode ser salvo como uma variável global.
+- Deve ser sempre passado as funções como parâmetros pela pilha.
+- ./carregador 125 100 500 4000 300 20000 125 30000 345.
+- ./carregador = Nome do Programa.
+- Primeiro Número (125) = Tamanho de um programa fictício em bytes a ser carregado na memória, ou seja, unidades de tamanho.
+- Até 4 pares de números separados por espaço., ou seja, blocos.
+	- Primeiro Par (100 500).
+	- Segundo Par (4000 300).
+	- Terceiro Par (20000 125).
+	- Quarto Par (30000 345).
+- Primeiro Número do Par (100,4000,20000,30000) = Endereço de memória que inicia um espaço/bloco livre na memória em decimal.
+- Segundo Número do Par (500,300,125,345) = Quantidades de unidades livres ou disponíveis nesse bloco em bytes
+- Verificar se o programa fictício cabe em algum bloco por inteiro.
+- Se não cabe, dividir o programa em pedaços sempre utilizando o máximo do tamanho possível dos blocos na ordem indicada.
+- Se não cabe, dar a mensagem que não tem espaço em memória para carregar esse programa.
+- Se cabe, seja em um bloco ou dividido em blocos, indicar a lista de blocos, o endereço inicial e o endereço final de cada parte do programa em cada bloco.
+- Não é possível utilizar io.mac
+
+Anotações
+- Simular carregar um programa na memória
+- Rodar Assembly NASM IA-32 (funções) dentro da linguagem C (código principal).
+- Pegar os dados vindos do argc e argv.
+- Programa em C lê parâmetros
+- Transformar em inteiro
+- Chamar a função 1 com os argumentos inteiros
+- Linguagem C entende a ordem os argumentos de trás para frente.
+- Criar duas funções em Assembly para carregar o programa e printar o resultado (onde o programa tá sendo carregado)
+- Função 1: Realiza os cálculos
+- Função 2: Passar os dados pela pilha
+- Passar os dados para as funções em Assembly no C.
+- Passagem de parâmetros das funções é usando uma pilha.
+- As funções não precisam retornar nada
+- Os parâmetros dos pares são apenas os números, sem as unidades.
+- No mínimo 1 par/bloco e no máximo 4 pares/blocos
+- Não é para achar o melhor espaço que cabe, é para seguir a orderm data no formato da instrução.
+- Criar uma estrutura de dados para fazer uma conta matemática
