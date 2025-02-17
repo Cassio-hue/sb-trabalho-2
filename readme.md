@@ -1,3 +1,3 @@
-nasm -f elf32 -o soma.o soma.asm
+nasm -f elf32 -o calcular_espaco.o calcular_espaco.asm
 
-g++ -m32 -o carregador carregador.cpp soma.o
+g++ -m32 -o carregador carregador.cpp calcular_espaco.o

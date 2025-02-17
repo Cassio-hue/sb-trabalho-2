@@ -1,8 +1,10 @@
 section .note.GNU-stack 
-section .text
-global soma
 
-soma:
+
+section .text
+global print
+
+print:
     ; Manipulação da pilha
     push EBP
     mov EBP, ESP

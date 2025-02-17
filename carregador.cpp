@@ -1,25 +1,25 @@
 #include <iostream>
-#include <bits/c++config.h>
 
 using namespace std;
 
-extern "C" int soma(int a, int b);
+extern "C" int calcular_espaco(int programa, int num_enderecos, int* blocos);
 
 int main(int argc, char *argv[]) {
+    int programa = atoi(argv[1]);
+    int num_enderecos = (argc - 2) / 2;
+    int* blocos = new int[num_enderecos * 2];
 
-    if (argc % 2 == 0) {
+    if (argc % 2 != 0 || argc < 3) {
         cout << "Número de argumentos inválido" << endl;
         return 1;
     }
 
-    // cout << "Length of array = " << argc << endl;
-    // for (int i = 0; i < argc; i++) {
-    //     cout << "argv[" << i << "] = " << argv[i] << endl;
-    // }
+    for (int i = 0; i < num_enderecos * 2; i++) {
+        blocos[i] = atoi(argv[i + 2]);
+    }
 
-    int resultado = soma(10, 5);
-    cout << "Soma (Assembly externo): " << resultado << endl;
-
+    calcular_espaco(programa, num_enderecos, blocos);
+    delete[] blocos;
 
     return 0;
 }
