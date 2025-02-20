@@ -1,3 +1,3 @@
-nasm -f elf32 -o calcular_espaco.o calcular_espaco.asm
+nasm -f elf32 -o verificar_memoria.o verificar_memoria.asm
 
-g++ -m32 -o carregador carregador.cpp calcular_espaco.o
+gcc -m32 -o carregador carregador.c verificar_memoria.o
